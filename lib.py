@@ -1,4 +1,5 @@
 import datetime
+import time
 from shpy import ProductsPy,CollectionPy
 
 def get_month_ago():
@@ -28,11 +29,13 @@ def older_products(month_ago):
 def remove_old_products(oldproducts):
     collection = CollectionPy()
     for product in oldproducts:
+        time.sleep(.3)
         r = collection.removeFromCollection(product,404829798645)
 
 
 def add_new_products(newproducts):
     collection = CollectionPy()
+    time.sleep(.3)
     for product in newproducts:
         collection.addItemToExistingCollection(product,404829798645)
 
