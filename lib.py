@@ -29,13 +29,13 @@ def older_products(month_ago):
 def remove_old_products(oldproducts):
     collection = CollectionPy()
     for product in oldproducts:
-        time.sleep(.3)
+        time.sleep(1)
         r = collection.removeFromCollection(product,404829798645)
 
 
 def add_new_products(newproducts):
     collection = CollectionPy()
-    time.sleep(.3)
+    time.sleep(.5)
     for product in newproducts:
         collection.addItemToExistingCollection(product,404829798645)
 
