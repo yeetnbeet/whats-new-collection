@@ -1,6 +1,6 @@
 import lib
 import os
-from flask import Flask
+from flask import Flask, send_file
 
 app = Flask(__name__)
 
@@ -11,6 +11,11 @@ def index():
     lib.add_new_products(newp)
     lib.remove_old_products(oldp)
     return "<p> Removed: "+str(len(oldp))+" Added: "+str(len(newp))+"</p>"
+
+@app.route("/pepe",methods=["GET"])
+def pepe():
+    filename = 'pepe-tea.gif'
+    return send_file(filename, mimetype='image/gif')
 
 if __name__ == "__main__":
     port = int(os.environ.get('PORT', 8000))
